@@ -23,7 +23,7 @@ const SignUp = () => {
       });
   };
   return (
-    <div className="hero-content flex-col lg:flex-row">
+    <div className="hero-content flex-col lg:flex-row mb-25">
       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form onSubmit={handleSignUp} className="card-body">
           <div className="form-control">

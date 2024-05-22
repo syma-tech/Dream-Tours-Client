@@ -4,7 +4,7 @@ import Tour from "./Tour";
 const Tours = () => {
   const [tours, setTours] = useState([]);
   useEffect(() => {
-    fetch("/trips.json")
+    fetch("https://dream-tour-server.vercel.app/tours")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -19,10 +19,14 @@ const Tours = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {tours.map((tour) => (
-          <Tour key={tour?._id} tour={tour} />
-          // <p>Tour</p>
-        ))}
+        {tours.length === 0 ? (
+          <span className="loading loading-bars loading-lg"></span>
+        ) : (
+          tours?.map((tour) => (
+            <Tour key={tour?._id} tour={tour} />
+            // <p>Tour</p>
+          ))
+        )}
       </div>
 
       {/* <ul>
