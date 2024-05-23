@@ -11,8 +11,8 @@ const Tour = ({ tour }) => {
         <img className="h-64 w-full" src={img} alt="tour area" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p>{location}</p>
+        <h2 className="card-title font-Bold  ">{name}</h2>
+        <p className="text-purple-800">{location}</p>
         <p>{shortDescription}</p>
         <div className="card-actions justify-end">
           <Link to={`/tours/${_id}`} className="btn btn-primary">

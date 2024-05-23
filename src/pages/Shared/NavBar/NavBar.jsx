@@ -17,9 +17,12 @@ const NavBar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/tours">Tours</Link>
-      </li>
+      {user?.email && (
+        <li>
+          <Link to="/tours">My Bookings</Link>
+        </li>
+      )}
+
       <li>
         <Link to="/about">About</Link>
       </li>
@@ -55,7 +58,12 @@ const NavBar = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link
+          to="/"
+          className="font-bold block font-mono  text-3xl text-primary"
+        >
+          Dream Tour
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
@@ -66,7 +74,7 @@ const NavBar = () => {
             Log Out
           </button>
         ) : (
-          <Link to="/login" className="btn">
+          <Link to="/login" className="btn btn-primary font-mono font-bold">
             Login
           </Link>
         )}
