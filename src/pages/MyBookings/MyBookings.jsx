@@ -5,7 +5,7 @@ import MyBookingRow from "./MyBookingRow";
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `https://dream-tour-server.vercel.app/bookings?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -18,7 +18,7 @@ const MyBookings = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`https://dream-tour-server.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
