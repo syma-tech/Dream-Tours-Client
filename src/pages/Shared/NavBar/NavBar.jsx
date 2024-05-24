@@ -17,18 +17,15 @@ const NavBar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
+
       <li>{user?.email && <Link to="/myBookings">My Bookings</Link>}</li>
       <li>
         {user?.email && (
           <Link to="/manageAllBookings">Manage All Bookings</Link>
         )}
-      </li>
-
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
