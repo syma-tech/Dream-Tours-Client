@@ -22,6 +22,10 @@ const BookingForm = ({ _id, location, img, title }) => {
       title,
     };
     console.log(touristBooking);
+    // https://dream-tour-server.vercel.app/bookings
+
+    // https://testing-server-ruddy.vercel.app/
+    // http://localhost:5000/bookings
 
     fetch("https://dream-tour-server.vercel.app/bookings", {
       method: "POST",
@@ -33,7 +37,7 @@ const BookingForm = ({ _id, location, img, title }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.insertedId > 0) {
           alert("Tour Booking Successful");
         }
       });
